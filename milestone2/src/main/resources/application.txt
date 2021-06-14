@@ -1,0 +1,32 @@
+password: password
+privateKey: keystore.jks
+alias: lpas
+
+logging:
+  level.root: DEBUG
+  level.io.fdlessard.liveproject.authorization: DEBUG
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: validate
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+      jdbc:
+        time_zone: UTC
+    show-sql: true
+
+
